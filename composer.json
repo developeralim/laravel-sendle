@@ -1,0 +1,36 @@
+{
+    "name": "alim/laravel-sandle",
+    "description": "Popular courier Sandle integration with Laravel development",
+    "autoload": {
+        "psr-4": {
+            "Alim\\LaravelSandle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alim\\LaravelSandle\\Tests\\": "tests/"
+        },
+        "files": [
+            "src\\helpers\\functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Md Alim Khan",
+            "email": "developeralimcu@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alim\\LaravelSandle\\SendleServiceProvider"
+            ],
+            "aliases": {
+                "Sandle": "Alim\\LaravelSandle\\SendleServiceProvider"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.5"
+    }
+}
