@@ -1,5 +1,5 @@
 <?php
-namespace Alim\LaravelSandle\Facade;
+namespace Alim\LaravelSendle\Facade;
 use Illuminate\Support\Facades\Facade;
 
 /**

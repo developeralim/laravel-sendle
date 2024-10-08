@@ -1,5 +1,5 @@
 <?php 
-namespace Alim\LaravelSandle\Traits;
+namespace Alim\LaravelSendle\Traits;
 
 trait Tracking {
     public function trackParcel( string $ref,string|int $idempotency = '' )

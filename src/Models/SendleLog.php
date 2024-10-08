@@ -1,5 +1,5 @@
 <?php 
-namespace Alim\LaravelSandle\Models;
+namespace Alim\LaravelSendle\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

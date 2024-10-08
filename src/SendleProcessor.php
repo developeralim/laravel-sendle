@@ -1,13 +1,13 @@
 <?php  
-namespace Alim\LaravelSandle;
+namespace Alim\LaravelSendle;
 
-use Alim\LaravelSandle\Models\SendleLog;
-use Alim\LaravelSandle\Traits\Logger;
-use Alim\LaravelSandle\Traits\Order;
-use Alim\LaravelSandle\Traits\Returns;
-use Alim\LaravelSandle\Traits\ShippingManifests;
-use Alim\LaravelSandle\Traits\Testing;
-use Alim\LaravelSandle\Traits\Tracking;
+use Alim\LaravelSendle\Models\SendleLog;
+use Alim\LaravelSendle\Traits\Logger;
+use Alim\LaravelSendle\Traits\Order;
+use Alim\LaravelSendle\Traits\Returns;
+use Alim\LaravelSendle\Traits\ShippingManifests;
+use Alim\LaravelSendle\Traits\Testing;
+use Alim\LaravelSendle\Traits\Tracking;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;

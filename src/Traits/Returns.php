@@ -1,5 +1,5 @@
 <?php 
-namespace Alim\LaravelSandle\Traits;
+namespace Alim\LaravelSendle\Traits;
 
 trait Returns {
     public function createReturn( array $data = [],string $orderId,string|int $idempotency = '' )

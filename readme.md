@@ -7,13 +7,13 @@
 follow the instruction below :)
 
 1. Install the package first 
-2. publish the config file : `php artisan vendor:publish --provider="Alim\LaravelSandle\SendleServiceProvider" --tag="config"`
+2. publish the config file : `php artisan vendor:publish --provider="Alim\LaravelSendle\SendleServiceProvider" --tag="config"`
 3. run the migration : `php artisan migrate`
 4. Go to config > sendle.php and put your credentials like api_key,api_id and set mode either  sandbox (for testing ) or production (for development)
 
 
 ### Testing integration 
-`\Alim\LaravelSandle\Facade\Sendle::ping()` will return an array with timestamp and ping status otherwise will thrown exception if credentials mismatch or not right
+`\Alim\LaravelSendle\Facade\Sendle::ping()` will return an array with timestamp and ping status otherwise will thrown exception if credentials mismatch or not right
 
 ### Quoteing & Ordering 
 **Get Products**
@@ -23,7 +23,7 @@ You'll receive one quote for each shipping product Sendle supports for the given
 You can get quotes for both domestic and international shipments. International parcels can be shipped from Australia and the United States to countries around the globe, or from Canada to the United States.
 
 ``` 
-    \Alim\LaravelSandle\Facade\Sendle::getQuote([
+    \Alim\LaravelSendle\Facade\Sendle::getQuote([
         'weight_value'      => 1,
         'weight_units'      => 'kg',
         'receiver_postcode' => '12345',
@@ -41,7 +41,7 @@ You can get quotes for both domestic and international shipments. International 
 You can send parcels domestically inside Australia, Canada, and the United States. International parcels can be shipped from Australia and the United States to countries around the globe, or from Canada to the United States. With our API you can tell us the parcel size, origin, and destination, and we'll do the work to find the best route and price for your order.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::createOrder([
+    \Alim\LaravelSendle\Facade\Sendle::createOrder([
         "sender" => [
             "address" => [
                 "country"       => "US",
@@ -83,7 +83,7 @@ You can send parcels domestically inside Australia, Canada, and the United State
 Viewing an order should include everything that you need to know about it! Aside from the tracking endpoint, of course. Importantly, the is_cancellable key under the scheduling section tells you whether you can cancel the order.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::getOrder('<ORDER_ID>');
+    \Alim\LaravelSendle\Facade\Sendle::getOrder('<ORDER_ID>');
 ```
 
 **Cancel an Order**
@@ -97,7 +97,7 @@ Note: Cancelled orders aren't deleted from the system and should still be viewab
 
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::cancelOrder('<ORDER_ID>');
+    \Alim\LaravelSendle\Facade\Sendle::cancelOrder('<ORDER_ID>');
 ```
 
 ### Shipping Manifests
@@ -108,7 +108,7 @@ Note: Cancelled orders aren't deleted from the system and should still be viewab
 Shipping manifests let a driver collect multiple parcels while scanning one barcode on US Domestic orders. Today we have one type of shipping manifest – USPS SCAN Forms.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::createShippingManifest([
+    \Alim\LaravelSendle\Facade\Sendle::createShippingManifest([
         'order_id' => []
     ]);
 ```
@@ -120,7 +120,7 @@ Shipping manifests let a driver collect multiple parcels while scanning one barc
 Shipping manifests let a driver collect multiple parcels while scanning one barcode on US Domestic orders. Today we have one type of shipping manifest – USPS SCAN Forms.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::getShippingManifests();
+    \Alim\LaravelSendle\Facade\Sendle::getShippingManifests();
 ```
 
 
@@ -130,7 +130,7 @@ Shipping manifests let a driver collect multiple parcels while scanning one barc
 Shipping manifests let a driver collect multiple parcels while scanning one barcode on US Domestic orders. Today we have one type of shipping manifest – USPS SCAN Forms.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::shippingManifestStatus('<MANIFEST_ID>');
+    \Alim\LaravelSendle\Facade\Sendle::shippingManifestStatus('<MANIFEST_ID>');
 ```
 
 **Get orders on shipping manifest**
@@ -139,7 +139,7 @@ Shipping manifests let a driver collect multiple parcels while scanning one barc
 Shipping manifests let a driver collect multiple parcels while scanning one barcode on US Domestic orders. Today we have one type of shipping manifest – USPS SCAN Forms.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::OrdersOnShippingManifest('<MANIFEST_ID>');
+    \Alim\LaravelSendle\Facade\Sendle::OrdersOnShippingManifest('<MANIFEST_ID>');
 ```
 
 **Download shipping manifest**
@@ -148,7 +148,7 @@ Shipping manifests let a driver collect multiple parcels while scanning one barc
 Shipping manifests let a driver collect multiple parcels while scanning one barcode on US Domestic orders. Today we have one type of shipping manifest – USPS SCAN Forms.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::downloadShippingManifest('<MANIFEST_ID>');
+    \Alim\LaravelSendle\Facade\Sendle::downloadShippingManifest('<MANIFEST_ID>');
 ```
 
 ### Returns
@@ -164,7 +164,7 @@ After creating the return order, you can get a label using the URLs in the respo
 If you want a convenient page receivers can read – which includes packaging directions – here are our AU Returns and US Returns articles. After attaching the return label to the parcel, the receiver will need to leave the parcel at a valid drop off location.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::createReturn([
+    \Alim\LaravelSendle\Facade\Sendle::createReturn([
         'id' => '<ORDER_ID>'
     ],'<ORDER_ID>');
 ```
@@ -179,7 +179,7 @@ You can get a label using the URLs in this response. The sender can then include
 If you want a convenient page receivers can read – which includes packaging directions – here are our AU Returns and US Returns articles. After attaching the return label to the parcel, the receiver will need to leave the parcel at a valid drop off location.
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::viewReturn('<ORDER_ID>');
+    \Alim\LaravelSendle\Facade\Sendle::viewReturn('<ORDER_ID>');
 ```
 
 ### Tracking
@@ -198,7 +198,7 @@ You should limit your requests to this endpoint to 10 per second per unique IP. 
 
 
 ```
-    \Alim\LaravelSandle\Facade\Sendle::trackParcel('<ORDER_REFERENCE>');
+    \Alim\LaravelSendle\Facade\Sendle::trackParcel('<ORDER_REFERENCE>');
 ```
 
 ## Credits

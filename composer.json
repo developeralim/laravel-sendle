@@ -1,14 +1,14 @@
 {
-    "name": "alim/laravel-sandle",
-    "description": "Popular courier Sandle integration with Laravel development",
+    "name": "alim/laravel-sendle",
+    "description": "Popular courier Sendle integration with Laravel development",
     "autoload": {
         "psr-4": {
-            "Alim\\LaravelSandle\\": "src/"
+            "Alim\\LaravelSendle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Alim\\LaravelSandle\\Tests\\": "tests/"
+            "Alim\\LaravelSendle\\Tests\\": "tests/"
         },
         "files": [
             "src\\helpers\\functions.php"
@@ -23,10 +23,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Alim\\LaravelSandle\\SendleServiceProvider"
+                "Alim\\LaravelSendle\\SendleServiceProvider"
             ],
             "aliases": {
-                "Sandle": "Alim\\LaravelSandle\\SendleServiceProvider"
+                "Sandle": "Alim\\LaravelSendle\\SendleServiceProvider"
             }
         }
     },

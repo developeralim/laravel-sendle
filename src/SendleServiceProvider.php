@@ -1,5 +1,5 @@
 <?php 
-namespace Alim\LaravelSandle;
+namespace Alim\LaravelSendle;
 
 use Illuminate\Support\ServiceProvider;
 
