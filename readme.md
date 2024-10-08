@@ -32,5 +32,47 @@ You can get quotes for both domestic and international shipments. International 
         'sender_country'    => 'US',
         'sender_postcode'   => '12345',
         'sender_suburb'     => 'Sender State'
-    ]) 
-```;
+    ]);
+
+
+**Create Order**
+####Creates an order to ship a parcel to the given delivery address.
+
+You can send parcels domestically inside Australia, Canada, and the United States. International parcels can be shipped from Australia and the United States to countries around the globe, or from Canada to the United States. With our API you can tell us the parcel size, origin, and destination, and we'll do the work to find the best route and price for your order.
+
+```
+    \Alim\LaravelSandle\Facade\Sendle::createOrder([
+        "sender" => [
+            "address" => [
+                "country"       => "US",
+                "suburb"        => "Sender State",
+                "postcode"      => 12346,
+                "state_code"    => "Arizona",
+                "state_name"    => "Arizona",
+                "address_line1" => "Hello world"
+            ],
+            "contact" => [
+                "name" => "Name"
+            ]
+        ],
+        "receiver" => [
+            "address" => [
+                "country" => "US",
+                "suburb" => "Receiver State",
+                "postcode" => 12345,
+                "state_code" => "Arizona",
+                "state_name" => "Arizona",
+                "address_line1" => "Hi world"
+            ],
+            "instructions" => "Handle it carefully",
+            "contact" => [
+                "name" => "Contact Name"
+            ]
+        ],
+        "weight" => [
+            "units" => "kg",
+            "value" => 1
+        ],
+        "description"  => "Hello world"
+    ]);
+
