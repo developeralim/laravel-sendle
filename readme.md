@@ -22,13 +22,15 @@ You'll receive one quote for each shipping product Sendle supports for the given
 
 You can get quotes for both domestic and international shipments. International parcels can be shipped from Australia and the United States to countries around the globe, or from Canada to the United States.
 
-```\Alim\LaravelSandle\Facade\Sendle::getQuote([
-    'weight_value'      => 1,
-    'weight_units'      => 'kg',
-    'receiver_postcode' => '12345',
-    'receiver_suburb'   => 'Receiver State',
-    'receiver_country'  => 'US',
-    'sender_country'    => 'US',
-    'sender_postcode'   => '12345',
-    'sender_suburb'     => 'Sender State'
-]);
+``` 
+    \Alim\LaravelSandle\Facade\Sendle::getQuote([
+        'weight_value'      => 1,
+        'weight_units'      => 'kg',
+        'receiver_postcode' => '12345',
+        'receiver_suburb'   => 'Receiver State',
+        'receiver_country'  => 'US',
+        'sender_country'    => 'US',
+        'sender_postcode'   => '12345',
+        'sender_suburb'     => 'Sender State'
+    ]) 
+```;
